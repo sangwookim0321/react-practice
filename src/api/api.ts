@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 interface EndPoints {
   LOGIN: string;
@@ -15,17 +15,17 @@ const apiUtils = () => {
   const reqOption = (): AxiosRequestConfig => {
     return {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       timeout: 60000,
     };
   };
 
   const reqOptionWithToken = (): AxiosRequestConfig => {
-    const token = sessionStorage.getItem("accessToken");
+    const token = sessionStorage.getItem('accessToken');
     return {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         Authorization: token ? `Bearer ${token}` : undefined,
       },
       timeout: 60000,
@@ -35,28 +35,24 @@ const apiUtils = () => {
   const reqOptionFormData = (): AxiosRequestConfig => {
     return {
       headers: {
-        "Content-Type": "multipart/form-data",
+        'Content-Type': 'multipart/form-data',
       },
       timeout: 60000,
     };
   };
 
   const reqOptionWithTokenFormData = (): AxiosRequestConfig => {
-    const token = sessionStorage.getItem("accessToken");
+    const token = sessionStorage.getItem('accessToken');
     return {
       headers: {
-        "Content-Type": "multipart/form-data",
+        'Content-Type': 'multipart/form-data',
         Authorization: token ? `Bearer ${token}` : undefined,
       },
       timeout: 60000,
     };
   };
 
-  const statusHandler = (
-    status: number,
-    noRedirection: () => void,
-    isRedirection: () => void
-  ) => {
+  const statusHandler = (status: number, noRedirection: () => void, isRedirection: () => void) => {
     if (status === 400) {
       noRedirection();
     } else {
@@ -65,8 +61,8 @@ const apiUtils = () => {
   };
 
   const endPoints: EndPoints = {
-    LOGIN: "/api/auth/login",
-    REFRESH_TOKEN: "/api/auth/refresh",
+    LOGIN: '/api/auth/login',
+    REFRESH_TOKEN: '/api/auth/refresh',
   };
 
   const httpGet = async (
@@ -80,7 +76,7 @@ const apiUtils = () => {
   ) => {
     const reqKey = callUrl + caller;
     if (pending_get[reqKey]) {
-      console.log("duplication api get fail : " + reqKey);
+      console.log('duplication api get fail : ' + reqKey);
       return;
     }
 
@@ -118,7 +114,7 @@ const apiUtils = () => {
   ) => {
     const reqKey = callUrl + caller;
     if (pending_post[reqKey]) {
-      console.log("duplication api post fail : " + reqKey);
+      console.log('duplication api post fail : ' + reqKey);
       return;
     }
 
@@ -155,7 +151,7 @@ const apiUtils = () => {
   ) => {
     const reqKey = callUrl + caller;
     if (pending_put[reqKey]) {
-      console.log("duplication api put fail : " + reqKey);
+      console.log('duplication api put fail : ' + reqKey);
       return;
     }
 
@@ -191,7 +187,7 @@ const apiUtils = () => {
   ) => {
     const reqKey = callUrl + caller;
     if (pending_patch[reqKey]) {
-      console.log("duplication api patch fail : " + reqKey);
+      console.log('duplication api patch fail : ' + reqKey);
       return;
     }
 
@@ -228,7 +224,7 @@ const apiUtils = () => {
   ) => {
     const reqKey = callUrl + caller;
     if (pending_delete[reqKey]) {
-      console.log("duplication api delete fail : " + reqKey);
+      console.log('duplication api delete fail : ' + reqKey);
       return;
     }
 
@@ -269,7 +265,7 @@ const apiUtils = () => {
   ) => {
     const reqKey = callUrl + caller;
     if (pending_post[reqKey]) {
-      console.log("duplication api post fail : " + reqKey);
+      console.log('duplication api post fail : ' + reqKey);
       return;
     }
 
@@ -307,7 +303,7 @@ const apiUtils = () => {
   ) => {
     const reqKey = callUrl + caller;
     if (pending_post[reqKey]) {
-      console.log("duplication api put fail : " + reqKey);
+      console.log('duplication api put fail : ' + reqKey);
       return;
     }
 

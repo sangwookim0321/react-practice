@@ -1,14 +1,17 @@
-import TabContainer from "../containers/TabContainer/TabContainer";
+import Tab from '../containers/tab-layout';
 
 function Section() {
-  const tabs = [
-    { title: "Tab 1", content: "Content 1" },
-    { title: "Tab 2", content: "Content 2" },
-  ];
   return (
     <div>
       <h1>Section</h1>
-      <TabContainer tabs={tabs} />
+      <Tab defaultValue="tab1">
+        <Tab.List>
+          <Tab.Trigger value="tab1">Tab 1</Tab.Trigger>
+          <Tab.Trigger value="tab2">Tab 2</Tab.Trigger>
+        </Tab.List>
+        <Tab.Content value="tab1">Content for Tab 1</Tab.Content>
+        <Tab.Content value="tab2">Content for Tab 2</Tab.Content>
+      </Tab>
     </div>
   );
 }
