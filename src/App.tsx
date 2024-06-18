@@ -8,6 +8,7 @@ function App() {
       <Home />
       <Section />
       <h1>dev 브랜치 작업</h1>
+      <h2>dev 브랜치 작업2</h2>
     </>
   );
 }
