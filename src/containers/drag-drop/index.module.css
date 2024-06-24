@@ -1,0 +1,12 @@
+.drag-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.drag-item {
+  cursor: all-scroll;
+}
+
+.drag-zone-over {
+  background: rgb(230, 230, 230);
+}
