@@ -1,0 +1,18 @@
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: palegreen;
+  width: 100px;
+  height: 50px;
+}
+
+.btn-reversed {
+  flex-direction: row-reverse;
+  background-color: palevioletred;
+}
